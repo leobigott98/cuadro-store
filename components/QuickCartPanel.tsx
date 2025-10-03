@@ -1,20 +1,20 @@
 import { useCart } from "@/context/CartContext";
+import { useRouter } from "expo-router";
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
   Dimensions,
   FlatList,
   Pressable,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import Animated, { SlideInRight, SlideOutRight } from "react-native-reanimated";
-import { useRouter } from "expo-router";
 
 const { width } = Dimensions.get("window");
 
 export default function QuickCartPanel() {
-  const { cart, openQuickView, setOpenQuickView } = useCart();
+  const { cart, openQuickView, setOpenQuickView, updateQuantity, removeFromCart } = useCart();
   const router = useRouter();
 
   if (!openQuickView) return null;
@@ -42,9 +42,30 @@ export default function QuickCartPanel() {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <View style={styles.item}>
-              <Text style={styles.itemText}>
-                {item.name} x{item.quantity}
-              </Text>
+              <Text style={styles.itemName}>{item.name}</Text>
+
+              {/* Quantity controls */}
+              <View style={styles.quantityRow}>
+                <TouchableOpacity
+                  style={styles.qtyBtn}
+                  onPress={() =>
+                    item.quantity > 1
+                      ? updateQuantity(item.id, item.quantity - 1)
+                      : removeFromCart(item.id)
+                  }
+                >
+                  <Text style={styles.qtyText}>–</Text>
+                </TouchableOpacity>
+
+                <Text style={styles.qtyValue}>{item.quantity}</Text>
+
+                <TouchableOpacity
+                  style={styles.qtyBtn}
+                  onPress={() => updateQuantity(item.id, item.quantity + 1)}
+                >
+                  <Text style={styles.qtyText}>+</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           )}
         />
@@ -74,8 +95,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   backdrop: {
-    flex: 1, // this takes all space outside the panel
-    backgroundColor: "rgba(0,0,0,0.3)", // optional dim background
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.3)",
   },
   panel: {
     width: width * 0.7,
@@ -94,8 +115,30 @@ const styles = StyleSheet.create({
   },
   title: { fontSize: 18, fontWeight: "700" },
   close: { fontSize: 18, fontWeight: "bold" },
-  item: { paddingVertical: 8, borderBottomWidth: 1, borderColor: "#eee" },
-  itemText: { fontSize: 14 },
+  item: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 8,
+    borderBottomWidth: 1,
+    borderColor: "#eee",
+  },
+  itemName: { fontSize: 14, flex: 1 },
+  quantityRow: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  qtyBtn: {
+    width: 28,
+    height: 28,
+    borderRadius: 6,
+    backgroundColor: "#f0f0f0",
+    alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: 4,
+  },
+  qtyText: { fontSize: 16, fontWeight: "600" },
+  qtyValue: { fontSize: 14, fontWeight: "500", minWidth: 20, textAlign: "center" },
   viewCartBtn: {
     backgroundColor: "#EF3C42",
     padding: 12,

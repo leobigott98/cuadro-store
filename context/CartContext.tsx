@@ -1,10 +1,11 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, ReactNode, useContext, useState } from "react";
 
 export type Product = {
   id: string;
   name: string;
   description: string;
   price: number;
+  quantity: number;
   images: any[]; // require() for assets
 };
 
@@ -13,6 +14,7 @@ type CartItem = Product & { quantity: number };
 interface CartContextType {
   cart: CartItem[];
   addToCart: (product: Product) => void;
+  updateQuantity: (id: string, quantity: number) => void;  // ✅ NEW
   clearCart: () => void;
   openQuickView: boolean;
   setOpenQuickView: (value: boolean) => void;
@@ -39,6 +41,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setOpenQuickView(true); // Open quickview
   };
 
+  const updateQuantity = (id: string, quantity: number) => {
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, quantity) } // prevent 0 or negative
+          : item
+      )
+    );
+  };
+
   const clearCart = () => setCart([]);
 
   const removeFromCart = (id: string) => {
@@ -47,7 +59,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, clearCart, openQuickView, setOpenQuickView, removeFromCart }}
+      value={{
+        cart,
+        addToCart,
+        updateQuantity,   // ✅ now available in context
+        clearCart,
+        openQuickView,
+        setOpenQuickView,
+        removeFromCart,
+      }}
     >
       {children}
     </CartContext.Provider>

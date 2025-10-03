@@ -93,11 +93,11 @@ export const products: Product[] = [
     price: 18,
     images: [require('@/assets/products/toallas/toalla_negra.jpg'), require('@/assets/products/toallas/HE_CUADRO-291.jpg'), require('@/assets/products/toallas/HE_CUADRO-304.jpg'),],
  },
-  /* {
-    id: "11",
+  {
+    id: "14",
     name: "Clásica Algodón Blanco",
     description: "Disponible en S, M y L, para damas y caballeros",
     price: 100,
-    images: [require('@/assets/products/mafe_blanco/HE_CUADRO-158.jpg'), require('@/assets/products/mafe_blanco/HE_CUADRO-160.jpg'), require('@/assets/products/mafe_blanco/HE_CUADRO-163.jpg'), require('@/assets/products/mafe_blanco/HE_CUADRO-167.jpg'),require('@/assets/products/mafe_blanco/HE_CUADRO-170.jpg')],
-  }, */
+    images: [require('@/assets/products/clasica_algodon_blanco/HE_CUADRO-105.jpg'), require('@/assets/products/clasica_algodon_blanco/HE_CUADRO-110.jpg'), require('@/assets/products/clasica_algodon_blanco/HE_CUADRO-111.jpg'), require('@/assets/products/clasica_algodon_blanco/HE_CUADRO-113.jpg'), require('@/assets/products/clasica_algodon_blanco/HE_CUADRO-114.jpg')],
+  },
 ];

@@ -13,6 +13,8 @@ export default function CatalogLayout() {
       <Stack.Screen name="index" options={{ title: "" }} />
       <Stack.Screen name="cart" options={{ title: "" }} />
       <Stack.Screen name="product/[id]" options={{ title: ""}}/>
+      <Stack.Screen name="categories" options={{ title: "" }} />
+      <Stack.Screen name="category/[id]" options={{ title: "" }} />
     </Stack>
   );
 }
