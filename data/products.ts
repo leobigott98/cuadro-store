@@ -1,0 +1,103 @@
+// data/products.ts
+import { Product } from "@/context/CartContext";
+
+export const products: Product[] = [
+  {
+    id: "1",
+    name: "Clásica Original Blanco",
+    description: "Disponible en S, M y L",
+    price: 65,
+    images: [require('@/assets/products/clasica_blanco/HE_CUADRO-267.jpg'), require('@/assets/products/clasica_blanco/HE_CUADRO-275.jpg'), require('@/assets/products/clasica_blanco/HE_CUADRO-277.jpg'), require('@/assets/products/clasica_blanco/HE_CUADRO-279.jpg'), require('@/assets/products/clasica_blanco/HE_CUADRO-287.jpg')],
+  },
+  {
+    id: "2",
+    name: "Mafe Original Blanco",
+    description: "Disponible en XS, S, M y L",
+    price: 130,
+    images: [require('@/assets/products/mafe_blanco/HE_CUADRO-158.jpg'), require('@/assets/products/mafe_blanco/HE_CUADRO-160.jpg'), require('@/assets/products/mafe_blanco/HE_CUADRO-163.jpg'), require('@/assets/products/mafe_blanco/HE_CUADRO-167.jpg'),require('@/assets/products/mafe_blanco/HE_CUADRO-170.jpg')],
+  },
+  {
+    id: "3",
+    name: "Mafe Original Negro",
+    description: "Disponible en XS, S, M y L",
+    price: 130,
+    images: [require('@/assets/products/mafe_negro/HE_CUADRO-244.jpg'), require('@/assets/products/mafe_negro/HE_CUADRO-245.jpg'), require('@/assets/products/mafe_negro/HE_CUADRO-248.jpg'), require('@/assets/products/mafe_negro/HE_CUADRO-252.jpg'),require('@/assets/products/mafe_negro/HE_CUADRO-258.jpg')],
+  },
+  {
+    id: "4",
+    name: "Mika Sport Lite Blacno",
+    description: "Disponible en S, M y L",
+    price: 90,
+    images: [require('@/assets/products/mika_blanco/HE_CUADRO-210.jpg'), require('@/assets/products/mika_blanco/HE_CUADRO-211.jpg'), require('@/assets/products/mika_blanco/HE_CUADRO-215.jpg'), require('@/assets/products/mika_blanco/HE_CUADRO-219.jpg'),require('@/assets/products/mika_blanco/HE_CUADRO-222.jpg'), require('@/assets/products/mika_blanco/HE_CUADRO-235.jpg'), require('@/assets/products/mika_blanco/HE_CUADRO-236.jpg'),],
+  },
+  {
+    id: "5",
+    name: "Basic Line Crop Tee Peanut",
+    description: "Disponible en S, M y L",
+    price: 90,
+    images: [require('@/assets/products/crop_peanut/HE_CUADRO-86.jpg'), require('@/assets/products/crop_peanut/HE_CUADRO-87.jpg'), require('@/assets/products/crop_peanut/HE_CUADRO-95.jpg'), require('@/assets/products/crop_peanut/HE_CUADRO-104.jpg')],
+  },
+  {
+    id: "6",
+    name: "Basic Line Crop Tee Ivory",
+    description: "Disponible en S, M y L",
+    price: 90,
+    images: [require('@/assets/products/crop_ivory/HE_CUADRO-124.jpg'), require('@/assets/products/crop_ivory/HE_CUADRO-129.jpg'), require('@/assets/products/crop_ivory/HE_CUADRO-132.jpg'),require('@/assets/products/crop_ivory/HE_CUADRO-133.jpg')],
+  },
+  {
+    id: "7",
+    name: "Basic Line Crop Tee Negro",
+    description: "Disponible en S, M y L",
+    price: 90,
+    images: [require('@/assets/products/crop_negro/HE_CUADRO-141.jpg'), require('@/assets/products/crop_negro/HE_CUADRO-148.jpg'), require('@/assets/products/crop_negro/HE_CUADRO-149.jpg'), require('@/assets/products/crop_negro/HE_CUADRO-155.jpg')],
+  },
+  {
+    id: "8",
+    name: "Clásica Algodón Stretch Negro Dama",
+    description: "Disponible en S, M y L",
+    price: 60,
+    images: [require('@/assets/products/stretch_negro/HE_CUADRO-325.jpg'), require('@/assets/products/stretch_negro/HE_CUADRO-315.jpg'), require('@/assets/products/stretch_negro/HE_CUADRO-311.jpg'), require('@/assets/products/stretch_negro/HE_CUADRO-310.jpg')],
+  },
+  {
+    id: "9",
+    name: "Clásica Algodón Stretch Negro Caballero",
+    description: "Disponible en S, M y L",
+    price: 60,
+    images: [require('@/assets/products/stretch_negro/HE_CUADRO-207.jpg'), require('@/assets/products/stretch_negro/HE_CUADRO-202.jpg'), require('@/assets/products/stretch_negro/HE_CUADRO-200.jpg'), require('@/assets/products/stretch_negro/HE_CUADRO-199.jpg'), require('@/assets/products/stretch_negro/HE_CUADRO-194.jpg'), require('@/assets/products/stretch_negro/HE_CUADRO-178.jpg'), require('@/assets/products/stretch_negro/HE_CUADRO-173.jpg')],
+  },
+  {
+    id: "10",
+    name: "Clásica Algodón Stretch Blanco",
+    description: "Disponible en S, M y L, para damas y caballeros",
+    price: 60,
+    images: [require('@/assets/products/stretch_blanco/IMG_0473.jpg'), require('@/assets/products/stretch_blanco/IMG_0475(1).jpg'), require('@/assets/products/stretch_blanco/IMG_0478.jpg'), require('@/assets/products/stretch_blanco/IMG_0480(1).jpg')],
+  },
+  {
+    id: "11",
+    name: "Toalla Sport Azul",
+    description: "",
+    price: 18,
+    images: [require('@/assets/products/toallas/toalla_azul.jpg'), require('@/assets/products/toallas/HE_CUADRO-339.jpg'), require('@/assets/products/toallas/HE_CUADRO-341.jpg'),],
+  },
+  {
+    id: "12",
+    name: "Toalla Sport Gris",
+    description: "",
+    price: 18,
+    images: [require('@/assets/products/toallas/toalla_gris.jpg'), require('@/assets/products/toallas/HE_CUADRO-359.jpg')],
+  },
+  {
+    id: "13",
+    name: "Toalla Sport Negra",
+    description: "",
+    price: 18,
+    images: [require('@/assets/products/toallas/toalla_negra.jpg'), require('@/assets/products/toallas/HE_CUADRO-291.jpg'), require('@/assets/products/toallas/HE_CUADRO-304.jpg'),],
+ },
+  /* {
+    id: "11",
+    name: "Clásica Algodón Blanco",
+    description: "Disponible en S, M y L, para damas y caballeros",
+    price: 100,
+    images: [require('@/assets/products/mafe_blanco/HE_CUADRO-158.jpg'), require('@/assets/products/mafe_blanco/HE_CUADRO-160.jpg'), require('@/assets/products/mafe_blanco/HE_CUADRO-163.jpg'), require('@/assets/products/mafe_blanco/HE_CUADRO-167.jpg'),require('@/assets/products/mafe_blanco/HE_CUADRO-170.jpg')],
+  }, */
+];
