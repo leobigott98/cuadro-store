@@ -33,11 +33,11 @@ export default function CategoriesPage() {
                     <Text style={styles.buttonText}>Volver al Inicio</Text>
                   </Pressable>
                 </Link>
-                <Link asChild href={"/catalog/cart"}>
+                {/* <Link asChild href={"/catalog/cart"}>
                   <Pressable style={styles.button}>
                     <Text style={styles.buttonText}>Ver Carrito</Text>
                   </Pressable>
-                </Link>
+                </Link> */}
               </View>
       </View>
       
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   },
   categoryCard: {
     backgroundColor: "#EF3C42",
-    padding: width*0.05,
+    padding: width*0.02,
     borderRadius: 10,
     alignItems: "center",
   },
@@ -70,19 +70,20 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     paddingVertical: 12,
-    paddingBottom: width*0.08
+    paddingBottom: width*0.12,
+    marginHorizontal: width*0.02,
     //backgroundColor: "#00000080",
   },
   button: {
     backgroundColor: "#EF3C42",
     paddingVertical: 12,
-    paddingHorizontal: 16,
+    paddingHorizontal: 12,
     borderRadius: 8,
     alignItems: "center",
     flex: 1,
-    marginHorizontal: 8,
+    marginHorizontal: 12,
   },
   buttonText: {
     color: "#fff",

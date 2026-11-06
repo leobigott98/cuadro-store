@@ -1,7 +1,9 @@
-import React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
 import Video from "@/components/video";
 import { Link } from "expo-router";
+import React from "react";
+import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
+
+const { width } = Dimensions.get("screen");
 
 export default function Page() {
 
@@ -43,6 +45,7 @@ const styles = StyleSheet.create({
     alignItems: "center", // centers horizontally
   },
   button: {
+    width: width*0.3,
     backgroundColor: "#EF3C42",
     paddingVertical: 12,
     paddingHorizontal: 24,
@@ -53,9 +56,10 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 32,
     color: "#ffffff",
     fontWeight: "bold",
+    marginHorizontal: 'auto'
   },
 });
 

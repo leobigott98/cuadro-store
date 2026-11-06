@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
   },
   content: {
   flex: 1,
-  paddingTop: Platform.OS === "ios" ? 60 : 300,
+  paddingTop: Platform.OS === "ios" ? 60 : 125,
 },
 });

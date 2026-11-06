@@ -2,7 +2,7 @@ import ScreenWrapper from "@/components/ScreenWrapper";
 import { useCart } from "@/context/CartContext";
 import { products } from "@/data/products";
 import { Ionicons } from "@expo/vector-icons";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { useRef, useState } from "react";
 import {
   Dimensions,
@@ -19,6 +19,7 @@ const SLIDER_HEIGHT = width * 1.5;
 
 export default function ProductDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const router = useRouter(); 
   const product = products.find((p) => p.id === id);
   const { addToCart } = useCart();
   const flatListRef = useRef<FlatList<any>>(null);
@@ -50,9 +51,7 @@ export default function ProductDetail() {
           )}
           keyExtractor={(_, idx) => String(idx)}
           onMomentumScrollEnd={(e) => {
-            const index = Math.round(
-              e.nativeEvent.contentOffset.x / width
-            );
+            const index = Math.round(e.nativeEvent.contentOffset.x / width);
             setCurrentIndex(index);
           }}
         />
@@ -82,7 +81,7 @@ export default function ProductDetail() {
         <Text style={styles.price}>${product.price}</Text>
 
         {/* Quantity Selector */}
-        <View style={styles.qtyContainer}>
+        {/* <View style={styles.qtyContainer}>
           <Pressable style={styles.qtyButton} onPress={decreaseQty}>
             <Ionicons name="remove" size={20} color="black" />
           </Pressable>
@@ -90,13 +89,20 @@ export default function ProductDetail() {
           <Pressable style={styles.qtyButton} onPress={increaseQty}>
             <Ionicons name="add" size={20} color="black" />
           </Pressable>
-        </View>
+        </View> */}
 
-        <Pressable
+        {/* <Pressable
           style={styles.button}
           onPress={() => addToCart({ ...product, quantity })}
         >
           <Text style={styles.buttonText}>Agregar al Carrito</Text>
+        </Pressable> */}
+
+        <Pressable
+          style={styles.button}
+          onPress={() => router.back()}
+        >
+          <Text style={styles.buttonText}>Volver a la Categoría</Text>
         </Pressable>
       </View>
     </ScreenWrapper>
@@ -104,11 +110,13 @@ export default function ProductDetail() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: { 
+    flex: 1,
+  },
   sliderImage: {
     width: "100%",
     height: "100%",
-    resizeMode: "cover",
+    resizeMode: "contain",
   },
   arrow: {
     position: "absolute",
@@ -160,12 +168,12 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#EF3C42",
     padding: 12,
-    marginBottom: width*0.05,
+    marginBottom: width * 0.12,
     borderRadius: 8,
     marginTop: 10,
     alignItems: "center",
-    marginHorizontal: 16,
+    marginHorizontal: 'auto',
+    width: width * 0.3
   },
-  buttonText: { color: "#fff", fontSize: 16, fontWeight: "600" },
+  buttonText: { color: "#fff", fontSize: 20, fontWeight: "600" },
 });
-

@@ -11,7 +11,7 @@ export const categories: Category[] = [
   {
     id: "clasica-original",
     name: "Clásica Original",
-    products: ["1"], // replace with actual product ids
+    products: ["1", "15"], // replace with actual product ids
   },
   {
     id: "mafe-original",
@@ -30,12 +30,12 @@ export const categories: Category[] = [
   },
   {
     id: "clasico-algodon-stretch",
-    name: "Clásico Algodón Stretch",
+    name: "Clásica Algodón Stretch",
     products: ["8", "9", "10"],
   },
   {
     id: "clasico-algodon",
-    name: "Clásico Algodón",
+    name: "Clásica Algodón",
     products: ["14"],
   },
   {

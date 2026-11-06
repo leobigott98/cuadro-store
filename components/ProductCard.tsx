@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 12,
   },
   name: {
-    fontSize: CARD_WIDTH * 0.1,
+    fontSize: CARD_WIDTH * 0.09,
     fontWeight: "600",
     textAlign: "center",
   },
